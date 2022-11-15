@@ -1,0 +1,24 @@
+body{
+    background-color: black;
+}
+p, h1 {
+    color: white    ;
+}
+@media screen and (max-width: 1200px) {
+    body{
+        background-color: yellow;
+    }
+}
+@media screen and (max-width: 1024px) {
+    body{
+        background-color: red;
+    }
+}
+@media screen and (max-width: 768px) {
+    body{
+        background-color: cyan;
+    }
+}
+
+/* max-width 768px anything below this px is affected */
+/* min-widht 768px anything above this px is affected */
