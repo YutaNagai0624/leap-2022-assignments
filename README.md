@@ -1,1 +1,3 @@
-# pinecone
+# Amur Battsolmon 
+
+## Team Green   
