@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let year = parseInt(prompt("Enter a year: "));
+        let month = parseInt(prompt("Enter a month: "));
+        let day = parseInt(prompt("Enter a day: "));
+        let num = "0";
+
+        if (month && day < 10) {
+            let month_new = num+month;
+            let day_new = num+day;
+            console.log(`${year}-${month_new}-${day_new}`);
+        }
+        else console.log(`${year}-${month}-${day}`);
+        //  unitel = 88 mobicom = 99 g-mobile = 98 skytel = 90 
+        let number = prompt("Utasnii duagar hiine uu: ")
+        let substr = number.substr(0, 2);
+        if(substr === '88' ) {
+            console.log("Unitel Number");
+        }
+        else if (substr === '99' ){
+            console.log("Mobicom Number");
+            
+        }
+        else if (substr === '98'){
+            console.log("G-mobile Number");
+            
+        }
+        else if (substr === '90' ){
+            console.log("Skytel Number");
+        }
+        else console.log("Ehnii hoyr oron ni haanhiih yumbe");
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

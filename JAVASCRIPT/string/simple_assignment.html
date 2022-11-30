@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. Өөрийн нэрийн урт, овог нэрийнхээ уртыг харьцуулж үз.
+        const name = "Amur", last_name = "Battsolmon"
+        if (name.length > last_name.length){
+            console.log("Your first name is longer");
+        }
+        else console.log("Your last name is longer");
+        // 2. Бүх тэмдэгтүүдийг жижиг үсгээр бичнэ үү.
+        let uppercase = name.toUpperCase()
+        console.log(uppercase);
+        // 3. Бүх тэмдэгтүүдийг том үсгээр бичнэ үү.
+        let lowercase = name.toLowerCase()
+        console.log(lowercase);
+        // 4. 'Pinecone academy- н' болон ' leap хөтөлбөрт тавтай морилно уу? ' - г нэг мөр болгон нэгтгэнэ үү. “concat()”
+        let str1 = "Pinecone academy- н"
+        let merged = str1.concat('', ' leap хөтөлбөрт тавтай морилно уу?')
+        console.log(merged);
+        // 5. firstName, LastName, country, city, age, job хувьсагч зарлан эдгээр хувьсагч орсон өгүүлбэр зохионо уу. 
+        let firstName = "Amur", lastName = "Battsolmon", country = "Mongolia", city = "Ulaanbaatar", age = 18, job = "university student"
+        console.log(`My name is ${lastName} ${firstName}, I'm ${age} years old, I live in ${city} ${country}. I'm currently a ${job}`);
+        // 6. Дараах загварыг хэвлэхийн тулд console.log() болон escape тэмдэгтүүдийг ашиглана уу.
+        console.log(" 1 2 3 4 5\n 2 3 4 5 1\n 3 4 5 1 2\n 4 5 1 2 3\n 5 1 2 3 4");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
