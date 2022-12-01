@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let n = 10; // row or column count
+        // defining an empty string
+        let string = "";
+
+        for(let i = 0; i < n; i++) { // external loop
+            for(let j = 0; j < n; j++) { // internal loop
+                if(i === 0 || i === n - 1) {
+                string = string + "*";
+                }
+                else {
+                    if(j === 0 || j === n - 1) {
+                        string = string + "*";
+                    }
+                    else {
+                        string = string + " ";
+                    }
+                }
+            }
+        // newline after each row
+        string = string + "\n";
+        }
+        // printing the string
+        console.log(string);
+
+
+
+        // const n = 10
+        // let sum = ""
+        // let result = ""
+        // let index = 0;
+        
+        // while(index<n){
+        //     sum+='* ' 
+        //     // **********
+        //     index++;
+        // }
+        // let j = 0;
+        // while (j<n){
+        //     result+=sum+'\n'
+        //     // result = result + sum 
+        //     j++
+        // }
+        // console.log(result);
+        
+            
+
+
+
+
+        
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
