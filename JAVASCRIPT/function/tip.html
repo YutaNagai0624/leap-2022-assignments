@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Гончигсумлай хоолны газар оров. Орсон хоолны газар нь 5000₮ - 30000₮ хооронд 15% нэмж төлдөг, бусад үед 20% - ийг нэмж төлдөг бол. 
+        // Гончигсумлай өөртөө зориулан нийт төлбөр буцаадаг function бичжээ. Эдгээр тохиолдолуудад тус бүр хэдийг төлөхийг function - оор олно уу? 3000₮, 27500₮, 100000₮.
+
+        // 1. Нийт төлбөр ийг олдог 1 function.
+        // 2. Зөвхөн нэмэгдэл төлбөрийг олдог 1 function.
+        // 3. Нийт төлбөрийн дундаж - ийг олдог 1 function.
+
+        let expense = [3000,27500,100000]
+
+        function tipOfRestaurant(array){
+            let sum = 0
+            let tip_sum = 0
+            for(let i = 0; i < array.length; i++){
+                let tip = array[i] * 0.2
+                if(array[i] >= 5000 && array[i] <= 30000){
+                    let tip = array[i] * 0.15
+                    sum+=array[i] + tip
+                    tip_sum +=tip
+            }
+                else {
+                    sum+=array[i] + tip
+                    tip_sum +=tip
+                }
+        }
+        return `Niit tulbur: ${sum}\nNiit nemegdel tulbur: ${tip_sum}\nNiit tulburiin dundaj: ${parseInt(sum/array.length)}`
+    }
+
+        const niit_orlogo = tipOfRestaurant(expense)
+        console.log(niit_orlogo);
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

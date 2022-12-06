@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. Өгөгдсөн 2 тооны ихийг олох функц бич.
+        function checkBigNumber(a, b) {
+            let result
+            if(a > b){
+                result = a;
+            }
+            else result = b;
+            return result;
+        }
+        const check = checkBigNumber(10, 52)
+        console.log(check); 
+        // 2. Өгөгдсөн array -аас өгөгдсөн тоо байгаа эсэхийг олох функц бич. Тухайн тоо байвал индексийг буцаана. Байхгүй бол -1 буцаана
+        function findNumberInArray(number, array) {
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] === number) {
+                    return "The index is: " + i;
+                }
+            }
+            return -1;
+        }
+        const different_numbers = [14, 51, 67, 96]
+        const numbers = [1, 2, 3, 4, 5];
+        const index = findNumberInArray(3, numbers);
+        console.log(index);
+        // 3. Өгөгдсөн тэмдэгт мөрөөс -аас өгөгдсөн тэмдэгт байгаа эсэхийг олох функц бич. Тухайн тэмдэгт байвал индексийг буцаана. Байхгүй бол -1 буцаана.
+        function findMarkInArray(mark, array) {
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] === mark) {
+                    return "The index of this mark is: " + i;
+                }
+            }
+            return -1;
+        }
+        const fruits = ['mango', 'apple', 'banana', "grape"]
+        const vegetables = ["CARROT", "CABBAGE", "TOMATO"];
+        const index_two = findNumberInArray('banana', fruits);
+        console.log(index_two);
+        // 4. Өгөгдсөн 2 тоон интервал дахь санамсаргүй тоо буцаах функц бич.
+        function randomIntFromInterval(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+        const randomNumber = randomIntFromInterval(10, 50)
+        console.log(randomNumber)
+        // 5. Өгөгдсөн array - ийн дундажыг олох функц бич.
+        const arr_numbers = [1,5,7,5,6]
+        function median(array){
+            let sum = 0 
+            for(let i = 0; i < array.length; i++){
+                sum+=array[i]
+            }
+            return sum / array.length
+        }
+        const medium = median(arr_numbers)
+        console.log(medium);
+        // 6. Өгөгдсөн array - ийн нийлбэрийг олох функц бич.
+        function sumOfArray(array){
+            let sum = 0 
+            for(let i = 0; i < array.length; i++){
+                sum+=array[i]
+            }
+            return sum
+        }
+        const arraySum = sumOfArray(arr_numbers)
+        console.log(arraySum);
+        // 7. Өгөгдсөн тоо анхны эсэхийг олох функц бич.
+        function isPrimbeNumber(n){
+            let result = true;
+            for(let i = 2; i<=Math.floor(n/2); i++ ){
+                if(result && n%i ===0 ){
+                    result = false;
+                    break;
+                }
+            }
+            return result;
+        }
+
+        // 8. Өгөгдсөн тэмдэгт мөрийн бүх үсгийг том үсэг болгох функц бич.
+        let new_arr = []
+        function upperCase(array){
+            for(let i = 0; i < array.length; i++){
+                new_arr[new_arr.length] =  array[i].toUpperCase()
+            }
+            return new_arr
+        }
+        const newlyCreatedArray = upperCase(fruits)
+        console.log(newlyCreatedArray);
+        // 9. Өгөгдсөн тэмдэгт мөрийн бүх үсгийг жижиг үсэг болгох функц бич.
+        let new_arr_two = []
+        function lowerCase(array){
+            for(let i = 0; i < array.length; i++){
+                new_arr_two[new_arr_two.length] =  array[i].toLowerCase()
+            }
+            return new_arr_two
+        }
+        const lastArray = lowerCase(new_arr)
+        console.log(lastArray);
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

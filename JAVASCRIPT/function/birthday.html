@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function isEven(n){
+            return n%2==0;
+        }
+        function isPrimbeNumber(n){
+            let result = true;
+            for(let i = 2; i<=Math.floor(n/2); i++ ){
+                if(result && n%i ===0 ){
+                    result = false;
+                    break;
+                }
+            }
+            return result;
+        }
+        
+       
+        let registeration_number = prompt("Enter your registration number: ")
+
+        function birthday(n){
+            let day = n.substr(6,2)
+            let month = n.substr(3,1)
+            let year = n.substr(2,2)
+            if(Number(month) === 2 || 3){
+                let newMonth = "0" + n.substr(5,1);
+                let newYear = "20" + year
+                console.log(`${newYear}-${newMonth}-${day}`);
+            }
+            else if (Number(month) < 2) {
+                let oldYear = "19" + year
+                console.log(`${oldYear}-${month}-${day}`);
+            }
+            else console.log("Error");
+          
+           
+        }
+        function getGender (n){
+            if(Number(n % 2 === 0)){
+                return 'Emegtei';
+            }
+            return 'Eregtei'
+        }
+ 
+        birthday(registeration_number);
+        getGender(registeration_number);
+    
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html> 
