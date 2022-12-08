@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        carBrands = [
+        ["Aston Martin Lagonda Ltd", "UK", 2016],
+        ["Audi", "Germany", 2016],
+        ["BMW", "Germany", 2016],
+        ["Chevrolet", "USA", 2016],
+        ["Dodge", "USA", 2016],
+        ["Ferrari", "Italy", 2016],
+        ["Honda", "Japan", 2016],
+        ["Jaguar", "UK", 2016],
+        ["Lamborghini", "Italy", 2016],
+        ];
+
+
+        function searchByFirstDigit(brands, letter){
+            let country = []
+            for(let i = 0; i < brands.length; i++){
+                country.push(brands[i][1])
+            }
+            console.log(country);
+            let result = []
+            for(let i = 0; i < carNames.length; i++){
+                if(brands[i][0][0].toLowerCase() === letter.toLowerCase()){
+                    result.push(brands[i])
+                }
+            }
+            return result;
+            
+        }
+        console.log(searchByFirstDigit(carBrands, 'a'));
+
+
+        // let number1 = parsenInt(prompt("Enter a number: "))
+        // let number2 = parsenInt(prompt("Enter a number: "))
+        // let number3 = parsenInt(prompt("Enter a number: "))
+        // let number4 = parsenInt(prompt("Enter a number: "))
+
+
+        // function sumOfNumbers(a,b,c,d){
+        //     let sum = a+b+c+d
+        //     return sum 
+        // }
+        // sumOfNumbers(number1, number2, number3,number4)
+
+
+
+        // let arr = [["Amur","Namuun","Dulguun"],[4,5,6],[7,8,9]]
+        // let arr2 = [1, 2, 3]
+
+        // console.log(arr[0][2][0]);
+
+        // let arr1 = ["Amur ", "Dulguun ", "Namuun, "]
+        // let arr2 = ["Mango ", "Grape ", "Banana "]
+        // function sumOfArrays(a,b){
+        //     console.log(a+b);
+        // }
+        // sumOfArrays(arr1,arr2)
+     
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

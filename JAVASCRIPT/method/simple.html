@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let array = [ "Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon" ] 
+            // Sort the array using  method
+            // Reverse the array using  method
+            // Remove the first IT company from the array
+            // Remove the middle IT company or companies from the array
+            // Remove the last IT company from the array
+            // Remove all IT companies
+        function methodArr(arr){
+            let sorted = arr.sort()
+            let reversed = arr.reverse()
+            let removedFirst = arr.shift()
+            let removeMiddle = arr.slice(3)
+            let removeLast = arr.pop()
+            let removeAll = arr.splice(0, 100)
+        }
+        console.log(methodArr(array));
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

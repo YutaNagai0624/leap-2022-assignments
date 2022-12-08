@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const users = [
+        {
+          name: "Alex",
+          email: "alex@alex.com",
+          skills: ["HTML", "CSS", "JavaScript"],
+          age: 45,
+          isLoggedIn: false,
+          points: 30,
+        },
+        {
+          name: "Job",
+          email: "job@job.com",
+          skills: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Redux",
+            "MongoDB",
+            "Express",
+            "React",
+            "Node",
+          ],
+          age: 45,
+          isLoggedIn: false,
+          points: 50,
+        },
+        {
+          name: "Brook",
+          email: "daniel@daniel.com",
+          skills: ["HTML", "CSS", "JavaScript", "React", "Redux"],
+          age: 39,
+          isLoggedIn: true,
+          points: 50,
+        },
+        {
+          name: "Daniel",
+          email: "daniel@alex.com",
+          skills: ["HTML", "CSS", "JavaScript", "Python"],
+          age: 25,
+          isLoggedIn: false,
+          points: 40,
+        },
+        {
+          name: "John",
+          email: "john@john.com",
+          skills: ["HTML", "CSS", "JavaScript", "React", "Redux", "Node.js"],
+          age: 20,
+          isLoggedIn: true,
+          points: 50,
+        },
+        {
+          name: "Thomas",
+          email: "thomas@thomas.com",
+          skills: ["HTML", "CSS", "JavaScript", "React"],
+          age: 18,
+          isLoggedIn: false,
+          points: 40,
+        },
+        {
+          name: "Paul",
+          email: "paul@paul.com",
+          skills: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "MongoDB",
+            "Express",
+            "React",
+            "Node",
+          ],
+          age: 111,
+          isLoggedIn: false,
+          points: 40,
+        },
+      ];
+
+      // Нэг хэрэглэгчийн объектын бүх утгыг авч хэвлэх.
+      // Хэрэглэгчийн объектод олон ур чадвар эзэмшсэн хүнийг олоорой.
+      // Нэвтэрсэн хэрэглэгчдийг тоолж, дараах объектоос 50-аас дээш оноо авсан хэрэглэгчдийг тоол.
+      // Хэрэглэгчийн объектоос MERN ( MongoDB, Express, React, Node ) стек хөгжүүлэгч хүмүүсийг олоорой.
+      // Хамгийн их настай 3 хүмүүсийн мэдээллийг хэвлэх
+
+      // ONE
+
+      console.log(users[0]);
+
+      // TWO
+      let userWithMostSkills = { name: "", skills: [] };
+
+      for (let i = 0; i < users.length; i++) {
+        if (users[i].skills.length > userWithMostSkills.skills.length) {
+          userWithMostSkills = users[i];
+        }
+      }
+
+      console.log("User with the most skills:", userWithMostSkills.name);
+      console.log("Skills:", userWithMostSkills.skills);
+      // THREE
+      let loggedInCount = 0;
+      let greaterThan50Count = 0;
+
+      for (let i = 0; i < users.length; i++) {
+        if (users[i].isLoggedIn) {
+          loggedInCount++;
+        }
+
+        if (users[i].points > 50) {
+          greaterThan50Count++;
+        }
+      }
+
+      console.log("Number of logged-in users:", loggedInCount);
+      console.log(
+        "Number of users with score greater than 50:",
+        greaterThan50Count
+      );
+      // FOUR
+
+      const arr = [1, 2, 3];
+      const arrb = arr;
+      console.log(arr === arrb);
+
+      function MERN(list) {
+        let skills = []
+        let students = [];
+        for(let i = 0; i < list[1].skills.length; i++){
+            skills.push(list[1].skills[i])
+        }
+    
+        for (let i = 0; i < list.length; i++) {
+          list[i].skills.includes("HTML") &&
+          list[i].skills.includes("CSS") &&
+          list[i].skills.includes("MongoDB") &&
+          list[i].skills.includes("Node")
+            ? students.push(list[i])
+            : null;
+        }
+        return students;
+      }
+      console.log(MERN(users));
+      // FIVE
+
+      function bigThreeAge(list){
+        ages = []
+        
+        for(let i = 0; i < list.length; i++){
+            ages.push(list[i].age)
+        }
+        console.log(ages.sort((a,b) => a-b));
+        return ages.sort((a,b) => a-b).slice(ages.length-3)
+      }
+      console.log(bigThreeAge(users))
+      
+
+
+
+      for(let i=0; i> users.length; i++){
+
+      }
+      console.log(users.sort())
+
+
+    </script>
+
+  </head>
+  <body></body>
+</html>

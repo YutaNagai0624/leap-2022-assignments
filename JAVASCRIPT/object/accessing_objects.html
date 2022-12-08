@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Ангид хэдэн эрэгтэй , эмэгтэй сурагч байгааг олох object буцаадаг функц бичих 
+        // Сурагчдын насны дунджийг олох функц бичих 
+        // Сурагчидад овог нэмж оруулах 
+        // Ижилхэн настай сурагчдыг олж шинэ object дотор хийх  
+        let students=[
+                {
+                name: 'Сэд-Эрдэнэ',
+                age: 19,
+                gender: "male"
+            },
+                {
+                name: 'Индра',
+                age: 30,
+                gender: "female"
+            },
+                {
+                name: 'Хатнаа ',
+                age: 21,
+                gender: "male"
+            },
+                {
+                name: 'Тэмүүлэн',
+                age: 23,
+                gender: "male"
+            },
+                {
+                name: 'Намуун',
+                age: 19,
+                gender: "female"
+            },
+        ]
+        function gender(list){
+            let total = {}
+            let countM = 0
+            let countF = 0
+            for(i = 0; i < students.length; i++){
+                if(students[i].gender === 'male'){
+                    countM++    
+                }
+                if(students[i].gender == 'female'){ 
+                    countF++    
+                }
+            }
+            Object.assign(total, {totalMen: countM})
+            Object.assign(total, {totalWomen: countF})
+            return total
+        }
+        console.log(gender(students));
+
+        function averageOfAge(list){
+            let sum = 0
+            for(i = 0; i < students.length; i++){
+                sum += students[i].age
+            }
+            return sum / students.length
+        }
+        console.log(averageOfAge(students));
+
+        function addSurname(list, surname) {
+            for (i = 0; i < students.length; i++) {
+                students[i].name += ' ' + surname;
+            }   
+        }
+        addSurname(students, "Junior")
+        console.log(students);
+
+        function groupByAge(students) {
+        let result = {};
+        for (let i = 0; i < students.length; i++) {
+            if (!result[students[i].age]) {  //0
+                debugger
+                    
+            result[students[i].age] = [];//0
+            }
+            result[students[i].age].push(students[i]); // 0 result{19}
+        }
+        return result;
+        }
+        console.log(groupByAge(students));
+        // let test ={}
+        // console.log( test[students[1].age] = []);
+
+
+        
+        
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

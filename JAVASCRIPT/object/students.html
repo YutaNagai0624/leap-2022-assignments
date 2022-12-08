@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // 1. Ангийнхаа сурагчидын дата үүсгэ. (name: "Гончигсумлай", birthOfYear: 1999, hobby: "морь", single: false)
+        // 2. Сурагчидаас 20 - оос дээш насны сурагчидыг буцаах function бичэх.
+        // 3. Сурагчийн насыг бодож олох function бичэх.
+        // 4. Сурагчидын ганц бие хүмүүсийг буцаах function бичэх.
+
+        let students = [
+            {
+                name: "Dulguun", birthOfYear: 1995, hobby: "writing", single: false
+            },
+            {
+                name: "Amur", birthOfYear: 2004, hobby: "gaming", single: true
+            },
+            {
+                name: "Ganbold", birthOfYear: 1985, hobby: "chess", single: false
+            },
+            {
+                name: "Namuun", birthOfYear: 1999, hobby: "reading", single: true
+            }
+        ]
+        function checkAge(list){
+            let sum = []
+            for(let i = 0; i < students.length; i++){
+                if(students[i].birthOfYear < 2002){
+                    sum.push(students[i])
+                }
+            }
+            return sum
+        }
+        function printAge(list){
+            let ages = []
+            for(let i = 0; i < students.length; i++){
+                let difference = 2022 - students[i].birthOfYear
+                ages.push(difference)
+            }
+            return ages
+        }
+        function checkSingle(list){
+            let singles = []
+            for(let i = 0; i < students.length; i++){
+                if(students[i].single){
+                    singles.push(students[i])
+                }
+            }
+            return singles
+        }
+        console.log(checkAge(students));
+        console.log(printAge(students));
+        console.log(checkSingle(students));
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
