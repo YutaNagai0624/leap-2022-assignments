@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const data = [
+            {productName:"Bakery", unitPrice:5000, amount: 200, totalPrice: 500000, casherId:1, date: '2022-11-07'},
+            {productName:"Chocolate", unitPrice:3000, amount: 18, totalPrice: 54.000, casherId:1, date: '2022-09-02'},
+            {productName:"Soda", unitPrice:2000, amount: 15, totalPrice: 30000, casherId:2, date: '2022-08-04'},
+            {productName:"Chips", unitPrice:1500, amount: 25, totalPrice: 37500, casherId:3, date: '2022-11-05'},
+            {productName:"Bread", unitPrice:1000, amount: 50, totalPrice: 50000, casherId:2, date: '2022-11-12'},
+            {productName:"Butter", unitPrice:5000, amount: 10, totalPrice: 50000, casherId:4, date: '2022-08-21'},
+            {productName:"Cheese", unitPrice:4000, amount: 20, totalPrice: 80000, casherId:2, date: '2022-11-31'},
+            {productName:"Ailk", unitPrice:3000, amount: 30, totalPrice: 90000, casherId:3, date: '2022-08-05'},
+            {productName:"Yogurt", unitPrice:2000, amount: 40, totalPrice: 80000, casherId:5, date: '2022-11-23'},
+            {productName:"Juice", unitPrice:1000, amount: 50, totalPrice: 50000, casherId:2, date: '2022-11-18'},
+            {productName:"Eggs", unitPrice:5000, amount: 10, totalPrice: 50000, casherId:3, date: '2022-06-24'},
+            {productName:"Cereal", unitPrice:4000, amount: 20, totalPrice: 80000, casherId:5, date: '2022-06-30'},
+            {productName:"Ham", unitPrice:3000, amount: 30, totalPrice: 90000, casherId:4, date: '2022-11-01'},
+            {productName:"Sausage", unitPrice:2000, amount: 40, totalPrice: 80000, casherId:1, date: '2022-11-09'},
+            {productName:"Bacon", unitPrice:1000, amount: 50, totalPrice: 50000, casherId:2, date: '2022-12-12'},
+            {productName:"Chicken", unitPrice:5000, amount: 10, totalPrice: 50000, casherId:1, date: '2022-08-01'},
+            {productName:"Beef", unitPrice:4000, amount: 20, totalPrice: 80000, casherId:3, date: '2022-11-12'},
+            {productName:"Fish", unitPrice:3000, amount: 30, totalPrice: 70000, casherId:2, date: '2022-06-01'},
+            {productName:"Oatmeal", unitPrice:3000, amount: 30, totalPrice: 90000, casherId:2, date: '2022-06-12'},
+            {productName:"Tuna", unitPrice:5000, amount: 150, totalPrice: 750000, casherId:2, date: '2022-06-01'}
+            ]
+            // Дараах даалгаварыг хийж гүйцэтгэнэ үү.
+            // 1. Нийт борлуулалтын дүнг тооцоолох.
+            function totalSum(arr){
+                sum = 0
+                for(let i = 0; i < arr.length; i++){
+                    sum+= arr[i].totalPrice
+                }
+                return sum
+            }
+            console.log(totalSum(data));
+            // 2. Нийт борлуулагдсан барааны тоог тооцоолох.
+            function totalUnit(arr){
+                sum = 0
+                for(let i = 0; i < arr.length; i++){
+                    sum+= arr[i].amount
+                }
+                return sum
+            }
+            console.log(totalUnit(data));
+            // 3. Хамгийн их зарагдсан 5 барааны жагсаалт /боруулалтын үнийн дүнгээр/ харуулах.
+            function displayTopSellingProducts(products) {
+                products.sort((a, b) => b.totalPrice - a.totalPrice);
+                console.log(products.slice(0, 5));
+            }
+            displayTopSellingProducts(data)
+            
+            // 4. Хамгийн их зарагдсан 5 барааны жагсаалт /боруулалтын тоо хэмжээгэр/ харуулах.
+            function displayTopAmountProducts(products) {
+                products.sort((a, b) => b.amount - a.amount);
+                console.log(products.slice(0, 5));
+            }
+            displayTopAmountProducts(data)
+            // 5. Хамгийн бага зарагдсан 5 барааны жагсаалт /боруулалтын үнийн дүнгээр/ харуулах.
+            function displayBottomSellingProducts(products) {
+                products.sort((a, b) => a.totalPrice - b.totalPrice);
+                console.log(products.slice(0, 5));
+            }
+            displayBottomSellingProducts(data)
+            // 6. Хамгийн бага зарагдсан 5 барааны жагсаалт /боруулалтын тоо хэмжээгээр/ харуулах.
+            function displayBottomAmountProducts(products) {
+                products.sort((a, b) => a.amount - b.amount);
+                console.log(products.slice(0, 5));
+            }
+            displayBottomAmountProducts(data)
+            // 7. Хамгийн их зарагдсан /боруулалтын үнийн дүнгээр/ 10 барааны боруулалтын үнийн дүнгийн нийт боруулалтанд эзлэх хувь харуулах.
+            function sumOfBigTen(arr){
+                arr.sort((a, b) => b.totalPrice - a.totalPrice);
+                let bigTen = arr.slice(0,10)
+                console.log(bigTen);
+                let sum = 0 
+                var total_sum = totalSum()
+                for(let i = 0; i < bigTen.length; i++){
+                    sum+= bigTen[i].totalPrice
+                }
+                return sum 
+            }
+            console.log(sumOfBigTen(data));
+
+            // 2357554 - 100% 
+            // 100000/2357554 * 100%  - ?
+            // 8. Хамгийн их зарагдсан /боруулалтын тоо хэмжээгээр/ 5 барааны тоо хэмжээ нийт барааны тоо хэмжээнд эзлэх хувь харуулах.
+            // 9. Хамгийн бага зарагдсан /боруулалтын үнийн дүнгээр/ 5 барааны боруулалтын үнийн дүнгийн нийт боруулалтанд эзлэх хувь харуулах.
+            // 10. Хамгийн бага зарагдсан /боруулалтын тоо хэмжээгээр/ 5 барааны тоо хэмжээ нийт барааны тоо хэмжээнд эзлэх хувь харуулах.
+
+
+    </script>
+ 
+
+
+</head>
+<body>
+    
+</body>
+</html>
