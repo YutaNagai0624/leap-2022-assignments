@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        background-color: green;
+        color: white;
+        font-size: 48px;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      pre {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Hello Pinecone</h1>
+    <pre></pre>
+    <script>
+      const pre = document.querySelector("pre");
+      const pyrimidrows = 10;
+      const addStrOnPre = (str) => {
+        pre.innerHTML += str;
+      };
+      const delay = 50;
+      let str = " ".repeat(pyrimidrows * 2);
+      str += "\n";
+      for (let row = 1; row <= pyrimidrows; row++) {
+        for (let space = 0; space < pyrimidrows - row; space++) {
+          str += " ";
+        }
+        for (let col = 1; col <= row; col++) {
+          str += "* ";
+        }
+        str += "\n";
+      }
+
+      for (let row = 1; row <= pyrimidrows / 3; row++) {
+        for (let space = 0; space < pyrimidrows - 2; space++) {
+          str += " ";
+        }
+        for (let star = 0; star < 2; star++) {
+          str += "* ";
+        }
+        str += "\n";
+      }
+
+      let index = 0;
+      const int = setInterval(() => {
+        addStrOnPre(str[index]);
+        index++;
+        if (index === str.length) {
+          clearInterval(int);
+        }
+      }, delay);
+    </script>
+  </body>
+</html>
